@@ -7,11 +7,8 @@ class ThreadsafeQueue
 {
 public:
     ThreadsafeQueue() :
-        head(std::make_unique<node>()), tail(head.get())
-    { }
-
+        head(std::make_unique<node>()), tail(head.get()) { }
     ThreadsafeQueue(const ThreadsafeQueue &other) = delete;
-
     ThreadsafeQueue &operator=(const ThreadsafeQueue &other) = delete;
 
     std::shared_ptr<T> try_pop()
